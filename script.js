@@ -46,9 +46,7 @@ function checkPinyin() {
 }
 
 function highlightTones(pinyin) {
-    return pinyin.replace(/([āáǎà])/g, '<span class="tone">$1</span>');
+    return pinyin.replace(/([āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ])/g, '<span class="tone">$1</span>');
 }
 
 document.addEventListener("DOMContentLoaded", showCharacter);
-
-
