@@ -50,3 +50,4 @@ function highlightTones(pinyin) {
 }
 
 document.addEventListener("DOMContentLoaded", showCharacter);
+
