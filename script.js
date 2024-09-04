@@ -45,12 +45,17 @@ function checkPinyin() {
 }
 
 function highlightTones(pinyin) {
-    return pinyin.replace(/([āáǎà])/g, '<span class="tone">$1</span>')
-                 .replace(/([ēéěè])/g, '<span class="tone">$1</span>')
-                 .replace(/([īíǐì])/g, '<span class="tone">$1</span>')
-                 .replace(/([ōóǒò])/g, '<span class="tone">$1</span>')
-                 .replace(/([ūúǔù])/g, '<span class="tone">$1</span>')
-                 .replace(/([ǖǘǚǜ])/g, '<span class="tone">$1</span>');
+    return pinyin
+        .replace(/nǐ/g, '<span class="tone">nǐ</span>')
+        .replace(/hǎo/g, '<span class="tone">hǎo</span>')
+        .replace(/shì/g, '<span class="tone">shì</span>')
+        .replace(/wǒ/g, '<span class="tone">wǒ</span>')
+        .replace(/zài/g, '<span class="tone">zài</span>')
+        .replace(/yǒu/g, '<span class="tone">yǒu</span>')
+        .replace(/zhè/g, '<span class="tone">zhè</span>')
+        .replace(/huì/g, '<span class="tone">huì</span>')
+        .replace(/de/g, '<span class="tone">de</span>')
+        .replace(/bù/g, '<span class="tone">bù</span>');
 }
 
 // Initial character display
