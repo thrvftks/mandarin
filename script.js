@@ -1,5 +1,3 @@
-// scripts.js
-
 const characters = [
     { character: '你', pinyin: 'nǐ', plainPinyin: 'ni', meaning: 'Bạn', sinoVietnamese: 'Nhĩ' },
     { character: '好', pinyin: 'hǎo', plainPinyin: 'hao', meaning: 'Tốt', sinoVietnamese: 'Hảo' },
@@ -13,7 +11,7 @@ const characters = [
     { character: '不', pinyin: 'bù', plainPinyin: 'bu', meaning: 'Không', sinoVietnamese: 'Bất' }
 ];
 
-let currentCharacter;
+let currentCharacter = null;
 
 function getRandomCharacter() {
     const randomIndex = Math.floor(Math.random() * characters.length);
@@ -25,7 +23,7 @@ function showCharacter() {
     document.getElementById('character-display').innerHTML = currentCharacter.character;
     document.getElementById('pinyin-input').value = '';
     document.getElementById('feedback').innerHTML = '';
-    document.getElementById('nextButton').style.display = 'none'; // Hide the next button initially
+    document.getElementById('nextButton').style.display = 'none';
 }
 
 function checkPinyin() {
@@ -44,22 +42,11 @@ function checkPinyin() {
         `;
     }
 
-    document.getElementById('nextButton').style.display = 'block'; // Show the next button after feedback
+    document.getElementById('nextButton').style.display = 'block';
 }
 
 function highlightTones(pinyin) {
-    return pinyin
-        .replace(/nǐ/g, '<span class="tone">nǐ</span>')
-        .replace(/hǎo/g, '<span class="tone">hǎo</span>')
-        .replace(/shì/g, '<span class="tone">shì</span>')
-        .replace(/wǒ/g, '<span class="tone">wǒ</span>')
-        .replace(/zài/g, '<span class="tone">zài</span>')
-        .replace(/yǒu/g, '<span class="tone">yǒu</span>')
-        .replace(/zhè/g, '<span class="tone">zhè</span>')
-        .replace(/huì/g, '<span class="tone">huì</span>')
-        .replace(/de/g, '<span class="tone">de</span>')
-        .replace(/bù/g, '<span class="tone">bù</span>');
+    return pinyin.replace(/([āáǎà])/g, '<span class="tone">$1</span>');
 }
 
-// Initial character display
 document.addEventListener("DOMContentLoaded", showCharacter);
