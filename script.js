@@ -29,9 +29,9 @@ function showCharacter() {
 }
 
 function checkPinyin() {
-    const userInput = document.getElementById('pinyin-input').value.trim();
+    const userInput = document.getElementById('pinyin-input').value.trim().toLowerCase();
     const selectedTone = document.getElementById('tone-selector').value;
-    
+
     if (userInput === currentCharacter.plainPinyin && selectedTone === currentCharacter.tone) {
         document.getElementById('feedback').innerHTML = 'Correct! ' + currentCharacter.character + ' (' + currentCharacter.pinyin + '): ' + currentCharacter.meaning;
     } else {
@@ -40,4 +40,4 @@ function checkPinyin() {
 }
 
 // Initial character display
-showCharacter();
+document.addEventListener("DOMContentLoaded", showCharacter);
