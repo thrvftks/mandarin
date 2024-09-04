@@ -18,6 +18,27 @@
 
     <button onclick="showCharacter()">Chữ tiếp theo</button>
 
-    <script src="scripts.js"></script>
+    <script>
+        // Inline JS for testing purposes
+        const characters = [
+            { character: '你', pinyin: 'nǐ', plainPinyin: 'ni', meaning: 'Bạn', sinoVietnamese: 'Nhĩ' },
+            { character: '好', pinyin: 'hǎo', plainPinyin: 'hao', meaning: 'Tốt', sinoVietnamese: 'Hảo' }
+            // Add other characters here...
+        ];
+
+        let currentCharacter;
+
+        function getRandomCharacter() {
+            const randomIndex = Math.floor(Math.random() * characters.length);
+            return characters[randomIndex];
+        }
+
+        function showCharacter() {
+            currentCharacter = getRandomCharacter();
+            document.getElementById('character-display').innerHTML = currentCharacter.character;
+        }
+
+        document.addEventListener("DOMContentLoaded", showCharacter);
+    </script>
 </body>
 </html>
