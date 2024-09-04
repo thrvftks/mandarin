@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Characters Helper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .character {
+            font-size: 50px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chinese Characters Helper</h1>
+    <p>Click on a character to see its meaning and pronunciation.</p>
+    
+    <div id="character-list">
+        <!-- Characters will go here -->
+        <div class="character" onclick="showDetails('你', 'nǐ', 'You')">你</div>
+        <div class="character" onclick="showDetails('好', 'hǎo', 'Good')">好</div>
+    </div>
+    
+    <div id="details"></div>
+
+    <script>
+        function showDetails(character, pinyin, meaning) {
+            document.getElementById('details').innerHTML = 
+                '<h2>' + character + '</h2>' + 
+                '<p>Pinyin: ' + pinyin + '</p>' + 
+                '<p>Meaning: ' + meaning + '</p>';
+        }
+    </script>
+</body>
+</html>
