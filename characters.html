@@ -12,33 +12,18 @@
 
     <input type="text" id="pinyin-input" placeholder="Nhập pinyin không dấu">
     
-    <button onclick="checkPinyin()">Kiểm tra</button>
+    <button id="checkButton">Kiểm tra</button>
 
     <div id="feedback"></div>
 
-    <button onclick="showCharacter()">Chữ tiếp theo</button>
+    <button id="nextButton" style="display:none;">Chữ tiếp theo</button>
+
+    <script src="scripts.js"></script>
 
     <script>
-        // Inline JS for testing purposes
-        const characters = [
-            { character: '你', pinyin: 'nǐ', plainPinyin: 'ni', meaning: 'Bạn', sinoVietnamese: 'Nhĩ' },
-            { character: '好', pinyin: 'hǎo', plainPinyin: 'hao', meaning: 'Tốt', sinoVietnamese: 'Hảo' }
-            // Add other characters here...
-        ];
-
-        let currentCharacter;
-
-        function getRandomCharacter() {
-            const randomIndex = Math.floor(Math.random() * characters.length);
-            return characters[randomIndex];
-        }
-
-        function showCharacter() {
-            currentCharacter = getRandomCharacter();
-            document.getElementById('character-display').innerHTML = currentCharacter.character;
-        }
-
-        document.addEventListener("DOMContentLoaded", showCharacter);
+        // Attach event listeners to buttons
+        document.getElementById('checkButton').addEventListener('click', checkPinyin);
+        document.getElementById('nextButton').addEventListener('click', showCharacter);
     </script>
 </body>
 </html>
