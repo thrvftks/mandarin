@@ -10,3 +10,13 @@ body {
     font-size: 50px;
     margin: 20px;
 }
+
+.tone {
+    color: red;
+    font-weight: bold;
+}
+
+#feedback {
+    margin-top: 20px;
+    font-size: 18px;
+}
