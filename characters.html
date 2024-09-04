@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <title>Hỗ Trợ Học Chữ Hán</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Test Display</h1>
-    <div id="character-display">你</div>
+    <h1>Hỗ Trợ Học Chữ Hán</h1>
+    <div id="character-display" class="character"></div>
+
+    <input type="text" id="pinyin-input" placeholder="Nhập pinyin không dấu">
+    
+    <button onclick="checkPinyin()">Kiểm tra</button>
+
+    <div id="feedback"></div>
+
+    <button onclick="showCharacter()">Chữ tiếp theo</button>
 
     <script src="scripts.js"></script>
 </body>
