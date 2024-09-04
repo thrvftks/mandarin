@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'syne';
-    src: url('https://drive.google.com/file/d/12L_RKhLorp0BEpeeGvbAD_he1SBHvHX7/view?usp=sharing') format('woff'),
+    font-family: 'Syne';
+    src: url('SVN-SyneTactile.woff') format('woff2'),
     font-weight: normal;
     font-style: normal;
 }
@@ -12,7 +12,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: 'syne', sans-serif;
+    font-family: 'Syne', sans-serif;
 }
 
 #character-display {
