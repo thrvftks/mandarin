@@ -1,0 +1,12 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+.character {
+    font-size: 50px;
+    margin: 20px;
+}
