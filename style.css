@@ -16,6 +16,7 @@ body {
 #feedback {
     margin-top: 20px;
     font-size: 1.2rem;
+    text-align: center;
 }
 
 #pinyin-input, button {
@@ -24,6 +25,31 @@ body {
     margin: 10px;
 }
 
+button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .tone {
     color: red;
+}
+
+#checkButton {
+    font-size: 2rem;
+    padding: 5px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+}
+
+#nextButton {
+    display: none;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
 }
