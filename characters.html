@@ -8,15 +8,23 @@
 </head>
 <body>
     <h1>Dò bài</h1>
-    <p>Click on a character to see its meaning and pronunciation.</p>
-    
-    <div id="character-list">
-        <!-- Characters will go here -->
-        <div class="character" onclick="showDetails('你', 'nǐ', 'You')">你</div>
-        <div class="character" onclick="showDetails('好', 'hǎo', 'Good')">好</div>
-    </div>
-    
-    <div id="details"></div>
+    <div id="character-display" class="character"></div>
+
+    <input type="text" id="pinyin-input" placeholder="Type the plain pinyin">
+
+    <select id="tone-selector">
+        <option value="0">No Tone</option>
+        <option value="1">Tone 1 (ā)</option>
+        <option value="2">Tone 2 (á)</option>
+        <option value="3">Tone 3 (ǎ)</option>
+        <option value="4">Tone 4 (à)</option>
+    </select>
+
+    <button onclick="checkPinyin()">Check</button>
+
+    <div id="feedback"></div>
+
+    <button onclick="showCharacter()">Next Character</button>
 
     <script src="scripts.js"></script>
 </body>
