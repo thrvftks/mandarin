@@ -25,6 +25,7 @@ function showCharacter() {
     document.getElementById('character-display').innerHTML = currentCharacter.character;
     document.getElementById('pinyin-input').value = '';
     document.getElementById('feedback').innerHTML = '';
+    document.getElementById('nextButton').style.display = 'none'; // Hide the next button initially
 }
 
 function checkPinyin() {
@@ -42,6 +43,8 @@ function checkPinyin() {
             Âm Hán Việt: ${currentCharacter.sinoVietnamese}
         `;
     }
+
+    document.getElementById('nextButton').style.display = 'block'; // Show the next button after feedback
 }
 
 function highlightTones(pinyin) {
