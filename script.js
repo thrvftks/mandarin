@@ -1,16 +1,16 @@
 // scripts.js
 
 const characters = [
-    { character: '你', pinyin: 'nǐ', plainPinyin: 'ni', tone: '3', meaning: 'You' },
-    { character: '好', pinyin: 'hǎo', plainPinyin: 'hao', tone: '3', meaning: 'Good' },
-    { character: '是', pinyin: 'shì', plainPinyin: 'shi', tone: '4', meaning: 'Is' },
-    { character: '我', pinyin: 'wǒ', plainPinyin: 'wo', tone: '3', meaning: 'I' },
-    { character: '在', pinyin: 'zài', plainPinyin: 'zai', tone: '4', meaning: 'At' },
-    { character: '有', pinyin: 'yǒu', plainPinyin: 'you', tone: '3', meaning: 'Have' },
-    { character: '这', pinyin: 'zhè', plainPinyin: 'zhe', tone: '4', meaning: 'This' },
-    { character: '会', pinyin: 'huì', plainPinyin: 'hui', tone: '4', meaning: 'Can' },
-    { character: '的', pinyin: 'de', plainPinyin: 'de', tone: '0', meaning: 'Of' },
-    { character: '不', pinyin: 'bù', plainPinyin: 'bu', tone: '4', meaning: 'Not' }
+    { character: '你', pinyin: 'nǐ', plainPinyin: 'ni', meaning: 'Bạn', sinoVietnamese: 'Nhĩ' },
+    { character: '好', pinyin: 'hǎo', plainPinyin: 'hao', meaning: 'Tốt', sinoVietnamese: 'Hảo' },
+    { character: '是', pinyin: 'shì', plainPinyin: 'shi', meaning: 'Là', sinoVietnamese: 'Thị' },
+    { character: '我', pinyin: 'wǒ', plainPinyin: 'wo', meaning: 'Tôi', sinoVietnamese: 'Ngã' },
+    { character: '在', pinyin: 'zài', plainPinyin: 'zai', meaning: 'Ở', sinoVietnamese: 'Tại' },
+    { character: '有', pinyin: 'yǒu', plainPinyin: 'you', meaning: 'Có', sinoVietnamese: 'Hữu' },
+    { character: '这', pinyin: 'zhè', plainPinyin: 'zhe', meaning: 'Đây', sinoVietnamese: 'Giá' },
+    { character: '会', pinyin: 'huì', plainPinyin: 'hui', meaning: 'Có thể', sinoVietnamese: 'Hội' },
+    { character: '的', pinyin: 'de', plainPinyin: 'de', meaning: 'Của', sinoVietnamese: 'Đích' },
+    { character: '不', pinyin: 'bù', plainPinyin: 'bu', meaning: 'Không', sinoVietnamese: 'Bất' }
 ];
 
 let currentCharacter;
@@ -24,19 +24,33 @@ function showCharacter() {
     currentCharacter = getRandomCharacter();
     document.getElementById('character-display').innerHTML = currentCharacter.character;
     document.getElementById('pinyin-input').value = '';
-    document.getElementById('tone-selector').value = '0';
     document.getElementById('feedback').innerHTML = '';
 }
 
 function checkPinyin() {
     const userInput = document.getElementById('pinyin-input').value.trim().toLowerCase();
-    const selectedTone = document.getElementById('tone-selector').value;
 
-    if (userInput === currentCharacter.plainPinyin && selectedTone === currentCharacter.tone) {
-        document.getElementById('feedback').innerHTML = 'Correct! ' + currentCharacter.character + ' (' + currentCharacter.pinyin + '): ' + currentCharacter.meaning;
+    if (userInput === currentCharacter.plainPinyin) {
+        document.getElementById('feedback').innerHTML = `
+            Chính xác! ${currentCharacter.character} (${highlightTones(currentCharacter.pinyin)}): 
+            ${currentCharacter.meaning} <br> 
+            Âm Hán Việt: ${currentCharacter.sinoVietnamese}
+        `;
     } else {
-        document.getElementById('feedback').innerHTML = 'Incorrect. Try again!';
+        document.getElementById('feedback').innerHTML = `
+            Sai. Chữ đúng là: ${currentCharacter.character} (${highlightTones(currentCharacter.pinyin)}) <br> 
+            Âm Hán Việt: ${currentCharacter.sinoVietnamese}
+        `;
     }
+}
+
+function highlightTones(pinyin) {
+    return pinyin.replace(/([āáǎà])/g, '<span class="tone">$1</span>')
+                 .replace(/([ēéěè])/g, '<span class="tone">$1</span>')
+                 .replace(/([īíǐì])/g, '<span class="tone">$1</span>')
+                 .replace(/([ōóǒò])/g, '<span class="tone">$1</span>')
+                 .replace(/([ūúǔù])/g, '<span class="tone">$1</span>')
+                 .replace(/([ǖǘǚǜ])/g, '<span class="tone">$1</span>');
 }
 
 // Initial character display
