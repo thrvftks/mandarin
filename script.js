@@ -81,16 +81,22 @@ function getRandomCharacter() {
 }
 
 function showCharacter() {
-    currentCharacter = getRandomCharacter();
-    document.getElementById('character-display').innerHTML = currentCharacter.character;
+    if (isChecking) {
+        checkPinyin(); // Check pinyin if the button is in "checking" state
+    } else {
+        currentCharacter = getRandomCharacter(); // Move to the next character
 
-    // Reset the input box and make it visible again
-    document.getElementById('pinyin-input').value = '';
-    document.getElementById('pinyin-input').classList.remove('hidden');
-    document.getElementById('feedback').innerHTML = '';
+        // Reset the input box and make it visible again
+        document.getElementById('pinyin-input').value = '';
+        document.getElementById('pinyin-input').classList.remove('hidden');
+        document.getElementById('feedback').innerHTML = '';
 
-    document.getElementById('checkNextButton').innerHTML = 'kiểm tra';
-    isChecking = true;
+        document.getElementById('character-display').innerHTML = currentCharacter.character;
+
+        // Change the button back to "Kiểm tra"
+        document.getElementById('checkNextButton').innerHTML = 'kiểm tra';
+        isChecking = true; // Set the state back to "checking"
+    }
 }
 
 function checkPinyin() {
@@ -118,13 +124,9 @@ function checkPinyin() {
         `;
     }
 
-    // Move the button after the result text
-    document.getElementById('feedback').innerHTML += `<br><button id="checkNextButton">tiếp</button>`;
-
-    // Rebind event to the newly added button for next character
-    document.getElementById('checkNextButton').addEventListener('click', showCharacter);
-    
-    isChecking = false;
+    // Change the button text and state to "Next"
+    document.getElementById('checkNextButton').innerHTML = 'tiếp';
+    isChecking = false; // Set the state to "Next"
 }
 
 
@@ -141,4 +143,11 @@ function handleButtonClick() {
 }
 
 document.addEventListener("DOMContentLoaded", showCharacter);
+// Attach event listener for button click and enter key
+document.getElementById('checkNextButton').addEventListener('click', showCharacter);
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        showCharacter();
+    }
+});
 
