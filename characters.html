@@ -11,7 +11,7 @@
 
     <input type="text" id="pinyin-input" placeholder="nhập pinyin không dấu">
     
-    <button id="checkButton">→</button>
+    <button id="checkNextButton">→</button>
 
     <div id="feedback"></div>
 
@@ -20,8 +20,12 @@
     <script src="script.js"></script>
 
     <script>
-        document.getElementById('checkButton').addEventListener('click', checkPinyin);
-        document.getElementById('nextButton').addEventListener('click', showCharacter);
+         document.getElementById('checkNextButton').addEventListener('click', handleButtonClick);
+        document.getElementById('pinyin-input').addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                handleButtonClick();
+            }
+        });
     </script>
 </body>
 </html>
