@@ -89,7 +89,7 @@ function showCharacter() {
     document.getElementById('pinyin-input').classList.remove('hidden');
     document.getElementById('feedback').innerHTML = '';
 
-    document.getElementById('checkNextButton').innerHTML = 'Kiểm tra';
+    document.getElementById('checkNextButton').innerHTML = 'kiểm tra';
     isChecking = true;
 }
 
@@ -116,7 +116,7 @@ function checkPinyin() {
     }
 
     // Move the button after the result text
-    document.getElementById('feedback').innerHTML += `<br><button id="checkNextButton">Chữ tiếp theo</button>`;
+    document.getElementById('feedback').innerHTML += `<br><button id="checkNextButton">tiếp</button>`;
 
     // Rebind event to the newly added button for next character
     document.getElementById('checkNextButton').addEventListener('click', showCharacter);
