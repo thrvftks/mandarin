@@ -79,6 +79,10 @@ function getRandomCharacter() {
     return characters[randomIndex];
 }
 
+function highlightTones(pinyin) {
+    return pinyin.replace(/([āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ])/g, '<span class="tone">$1</span>');
+}
+
 let isChecking = true; // To track the button state (checking or next)
 let currentCharacter = getRandomCharacter(); // Get a random character at the start
 
@@ -140,9 +144,7 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-function highlightTones(pinyin) {
-    return pinyin.replace(/([āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ])/g, '<span class="tone">$1</span>');
-}
+
 // Initial character display
 document.getElementById('character-display').innerHTML = currentCharacter.character;
 
