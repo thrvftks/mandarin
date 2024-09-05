@@ -85,7 +85,7 @@ function showCharacter() {
     document.getElementById('character-display').innerHTML = currentCharacter.character;
     document.getElementById('pinyin-input').value = '';
     document.getElementById('feedback').innerHTML = '';
-    document.getElementById('checkNextButton').innerHTML = 'Kiểm tra';
+    document.getElementById('checkNextButton').innerHTML = 'skrt';
     isChecking = true;
 }
 
@@ -94,18 +94,21 @@ function checkPinyin() {
 
     if (userInput === currentCharacter.plainPinyin) {
         document.getElementById('feedback').innerHTML = `
-            Chính xác! ${currentCharacter.character} (${highlightTones(currentCharacter.pinyin)}): 
-            ${currentCharacter.meaning} <br> 
-            Âm Hán Việt: ${currentCharacter.sinoVietnamese}
+            <span class="pinyin">${highlightTones(currentCharacter.pinyin)}</span>
+            ${currentCharacter.character}: ${currentCharacter.meaning} <br> 
+            <br>
+            hán việt: ${currentCharacter.sinoVietnamese}
         `;
     } else {
         document.getElementById('feedback').innerHTML = `
-            Sai. Chữ đúng là: ${currentCharacter.character} (${highlightTones(currentCharacter.pinyin)}) <br> 
-            Âm Hán Việt: ${currentCharacter.sinoVietnamese}
+            sai. <span class="pinyin">${highlightTones(currentCharacter.pinyin)}</span>
+            ${currentCharacter.character}: ${currentCharacter.meaning} <br> 
+            <br>
+            hán việt: ${currentCharacter.sinoVietnamese}
         `;
     }
 
-    document.getElementById('checkNextButton').innerHTML = 'Chữ tiếp theo';
+    document.getElementById('checkNextButton').innerHTML = '→';
     isChecking = false;
 }
 
