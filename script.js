@@ -150,6 +150,7 @@ document.getElementById('character-display').innerHTML = currentCharacter.charac
 
 
 
+
    // if (userInput === currentCharacter.plainPinyin) {
      //   document.getElementById('feedback').innerHTML = `
      //       <span class="pinyin">${highlightTones(currentCharacter.pinyin)}</span> 
