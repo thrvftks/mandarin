@@ -24,12 +24,14 @@ body {
 #character-display .traditional {
     font-family: 'Noto Serif TC', serif;
     font-weight: 800;
+    font-display: swap;
 }
 
 /* Simplified characters: Noto Serif SC (Weight 800) */
 #character-display .simplified {
     font-family: 'Noto Serif SC', serif;
     font-weight: 800;
+    font-display: swap;
 }
 
 #feedback {
@@ -64,7 +66,8 @@ button {
     font-size: 2rem;
     font-family: 'Noto Serif', serif;
     font-style: italic;
-    font-weight: 100; /* Different font for the entire pinyin */
+    font-weight: 100;
+    font-display: swap;/* Different font for the entire pinyin */
 }
 
 .tone {
@@ -72,7 +75,8 @@ button {
     font-size: 2rem;
     font-family: 'Noto Serif', serif;
     font-style: italic;
-    font-weight: 100; /* Different font for pinyin */
+    font-weight: 100;
+    font-display: swap;/* Different font for pinyin */
 }
 
 .hidden {
