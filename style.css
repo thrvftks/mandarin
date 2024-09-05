@@ -51,11 +51,13 @@ button {
 }
 
 .pinyin {
+    font-size: 2rem;
     font-family: 'Noto Sans', sans-serif; /* Different font for the entire pinyin */
 }
 
 .tone {
     color: #4CAF50;
+    font-size: 2rem;
     font-family: 'Noto Sans', sans-serif; /* Different font for pinyin */
 }
 
