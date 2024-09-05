@@ -16,9 +16,10 @@ body {
 }
 
 #character-display {
-    font-size: 5rem;
+    font-size: 15rem;
     margin-bottom: 20px;
-    font-family: 'Noto Serif', serif; /* Font for Chinese characters */
+    font-family: 'Noto Serif', serif;
+    font-weight: 800;/* Font for Chinese characters */
 }
 
 #feedback {
@@ -56,6 +57,10 @@ button {
 .tone {
     color: #4CAF50;
     font-family: 'Noto Sans', sans-serif; /* Different font for pinyin */
+}
+
+.hidden {
+    display: none; /* Use this class to hide the input box */
 }
 
 /*button {
