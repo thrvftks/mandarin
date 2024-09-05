@@ -12,18 +12,20 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: 'Syne', sans-serif;
+    font-family: 'Syne', sans-serif; /* Regular font */
 }
 
 #character-display {
     font-size: 5rem;
     margin-bottom: 20px;
+    font-family: 'Noto Serif', serif; /* Font for Chinese characters */
 }
 
 #feedback {
     margin-top: 20px;
     font-size: 1.2rem;
     text-align: center;
+    font-family: 'Syne', sans-serif; /* Regular font */
 }
 
 #pinyin-input, button {
@@ -34,14 +36,31 @@ body {
 
 button {
     cursor: pointer;
+    font-family: 'Syne', sans-serif; /* Same font as regular text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    padding: 5px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    
+}
+
+.tone {
+    color: #4CAF50;
+    font-family: 'Noto Sans', sans-serif; /* Different font for pinyin */
+}
+
+/*button {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.tone {
-    color: red;
-}
+
 
 #checkButton {
     font-size: 2rem;
@@ -58,4 +77,4 @@ button {
     border: none;
     padding: 10px 20px;
 }
-
+*/
