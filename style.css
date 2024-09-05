@@ -18,8 +18,18 @@ body {
 #character-display {
     font-size: 15rem;
     margin-bottom: 20px;
-    font-family: 'Noto Serif', serif;
-    font-weight: 800;/* Font for Chinese characters */
+}
+
+/* Traditional characters: Noto Serif TC (Weight 800) */
+#character-display .traditional {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 800;
+}
+
+/* Simplified characters: Noto Serif SC (Weight 800) */
+#character-display .simplified {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 800;
 }
 
 #feedback {
@@ -52,13 +62,17 @@ button {
 
 .pinyin {
     font-size: 2rem;
-    font-family: 'Noto Sans', sans-serif; /* Different font for the entire pinyin */
+    font-family: 'Noto Serif', serif;
+    font-style: italic;
+    font-weight: 100; /* Different font for the entire pinyin */
 }
 
 .tone {
     color: #4CAF50;
     font-size: 2rem;
-    font-family: 'Noto Sans', sans-serif; /* Different font for pinyin */
+    font-family: 'Noto Serif', serif;
+    font-style: italic;
+    font-weight: 100; /* Different font for pinyin */
 }
 
 .hidden {
