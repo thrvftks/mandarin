@@ -125,7 +125,7 @@ function checkPinyin() {
     }
 
     // Change the button text to "Tiếp" (Next)
-    document.getElementById('checkNextButton').innerHTML = 'Tiếp';
+    document.getElementById('checkNextButton').innerHTML = 'tiếp';
     isChecking = false; // Set the state to "Next"
 }
 
