@@ -116,7 +116,6 @@ function checkPinyin() {
         document.getElementById('feedback').innerHTML = `
              <span class="pinyin">${highlightTones(currentCharacter.pinyin)}</span> 
            <br>
-            <br>
             ${currentCharacter.meaning} <br> 
             hán việt: ${currentCharacter.sinoVietnamese}
         `;
@@ -125,7 +124,7 @@ function checkPinyin() {
             sai !!!
             <br>
     
-            <span class="pinyin">${highlightTones(currentCharacter.pinyin)}</span> <br> <br>
+            <span class="pinyin">${highlightTones(currentCharacter.pinyin)}</span> <br>
             ${currentCharacter.meaning} <br>
             hán việt: ${currentCharacter.sinoVietnamese}
         `;
