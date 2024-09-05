@@ -83,34 +83,47 @@ function getRandomCharacter() {
 function showCharacter() {
     currentCharacter = getRandomCharacter();
     document.getElementById('character-display').innerHTML = currentCharacter.character;
+
+    // Reset the input box and make it visible again
     document.getElementById('pinyin-input').value = '';
+    document.getElementById('pinyin-input').classList.remove('hidden');
     document.getElementById('feedback').innerHTML = '';
-    document.getElementById('checkNextButton').innerHTML = 'skrt';
+
+    document.getElementById('checkNextButton').innerHTML = 'Kiểm tra';
     isChecking = true;
 }
 
 function checkPinyin() {
     const userInput = document.getElementById('pinyin-input').value.trim().toLowerCase();
 
+    // Hide the input box when the answer is checked
+    document.getElementById('pinyin-input').classList.add('hidden');
+
     if (userInput === currentCharacter.plainPinyin) {
         document.getElementById('feedback').innerHTML = `
-            <span class="pinyin">${highlightTones(currentCharacter.pinyin)}</span>
-            ${currentCharacter.character}: ${currentCharacter.meaning} <br> 
+            <span class="pinyin">${highlightTones(currentCharacter.pinyin)}</span> 
             <br>
+            ${currentCharacter.meaning} <br> 
             hán việt: ${currentCharacter.sinoVietnamese}
         `;
     } else {
         document.getElementById('feedback').innerHTML = `
-            sai. <span class="pinyin">${highlightTones(currentCharacter.pinyin)}</span>
-            ${currentCharacter.character}: ${currentCharacter.meaning} <br> 
+            sai !
             <br>
+            <span class="pinyin">${highlightTones(currentCharacter.pinyin)}</span> <br> 
             hán việt: ${currentCharacter.sinoVietnamese}
         `;
     }
 
-    document.getElementById('checkNextButton').innerHTML = '→';
+    // Move the button after the result text
+    document.getElementById('feedback').innerHTML += `<br><button id="checkNextButton">Chữ tiếp theo</button>`;
+
+    // Rebind event to the newly added button for next character
+    document.getElementById('checkNextButton').addEventListener('click', showCharacter);
+    
     isChecking = false;
 }
+
 
 function highlightTones(pinyin) {
     return pinyin.replace(/([āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ])/g, '<span class="tone">$1</span>');
