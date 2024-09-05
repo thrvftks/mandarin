@@ -29,7 +29,7 @@ body {
     font-family: 'Syne', sans-serif; /* Regular font */
 }
 
-#pinyin-input {
+#pinyin-input, button {
     font-size: 1rem;
     font-family: 'Syne', sans-serif;
     padding: 10px;
@@ -42,7 +42,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 5px 15px;
     background-color: #4CAF50;
     color: white;
