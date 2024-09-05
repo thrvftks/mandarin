@@ -73,6 +73,7 @@ const characters = [
 ];
 
 let currentCharacter = null;
+let isChecking = true;
 
 function getRandomCharacter() {
     const randomIndex = Math.floor(Math.random() * characters.length);
@@ -84,7 +85,8 @@ function showCharacter() {
     document.getElementById('character-display').innerHTML = currentCharacter.character;
     document.getElementById('pinyin-input').value = '';
     document.getElementById('feedback').innerHTML = '';
-    document.getElementById('nextButton').style.display = 'none';
+    document.getElementById('checkNextButton').innerHTML = 'Kiểm tra';
+    isChecking = true;
 }
 
 function checkPinyin() {
@@ -92,23 +94,31 @@ function checkPinyin() {
 
     if (userInput === currentCharacter.plainPinyin) {
         document.getElementById('feedback').innerHTML = `
-            ${highlightTones(currentCharacter.pinyin)}: 
+            Chính xác! ${currentCharacter.character} (${highlightTones(currentCharacter.pinyin)}): 
             ${currentCharacter.meaning} <br> 
-            hán việt: ${currentCharacter.sinoVietnamese}
+            Âm Hán Việt: ${currentCharacter.sinoVietnamese}
         `;
     } else {
         document.getElementById('feedback').innerHTML = `
-            sai. ${highlightTones(currentCharacter.pinyin)}: 
-            ${currentCharacter.meaning} <br> 
-            hán việt: ${currentCharacter.sinoVietnamese}
+            Sai. Chữ đúng là: ${currentCharacter.character} (${highlightTones(currentCharacter.pinyin)}) <br> 
+            Âm Hán Việt: ${currentCharacter.sinoVietnamese}
         `;
     }
 
-    document.getElementById('nextButton').style.display = 'block';
+    document.getElementById('checkNextButton').innerHTML = 'Chữ tiếp theo';
+    isChecking = false;
 }
 
 function highlightTones(pinyin) {
     return pinyin.replace(/([āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ])/g, '<span class="tone">$1</span>');
+}
+
+function handleButtonClick() {
+    if (isChecking) {
+        checkPinyin();
+    } else {
+        showCharacter();
+    }
 }
 
 document.addEventListener("DOMContentLoaded", showCharacter);
