@@ -5,6 +5,26 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Noto Serif';
+    src: url('NotoSerif-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Noto Serif TC';
+    src: url('NotoSerifTC-VariableFont_wght.woff') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Serif SC';
+    src: url('NotoSerifSC-VariableFont_wght.woff') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -24,14 +44,12 @@ body {
 #character-display .traditional {
     font-family: 'Noto Serif TC', serif;
     font-weight: 800;
-    font-display: swap;
 }
 
 /* Simplified characters: Noto Serif SC (Weight 800) */
 #character-display .simplified {
     font-family: 'Noto Serif SC', serif;
     font-weight: 800;
-    font-display: swap;
 }
 
 #feedback {
@@ -67,7 +85,7 @@ button {
     font-family: 'Noto Serif', serif;
     font-style: italic;
     font-weight: 100;
-    font-display: swap;/* Different font for the entire pinyin */
+  /* Different font for the entire pinyin */
 }
 
 .tone {
