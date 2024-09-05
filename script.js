@@ -80,7 +80,7 @@ function getRandomCharacter() {
 }
 
 let isChecking = true; // To track the button state (checking or next)
-let currentCharacter = getRandomCharacter(); // Initial character
+let currentCharacter = getRandomCharacter(); // Get a random character at the start
 
 function checkPinyin() {
     const userInput = document.getElementById('pinyin-input').value.trim().toLowerCase();
@@ -91,7 +91,7 @@ function checkPinyin() {
     if (userInput === currentCharacter.plainPinyin) {
         document.getElementById('feedback').innerHTML = `
              <span class="pinyin">${highlightTones(currentCharacter.pinyin)}</span> 
-            <br>
+           <br>
             <br>
             ${currentCharacter.meaning} <br> 
             hán việt: ${currentCharacter.sinoVietnamese}
@@ -103,18 +103,18 @@ function checkPinyin() {
     
             <span class="pinyin">${highlightTones(currentCharacter.pinyin)}</span> <br> <br>
             ${currentCharacter.meaning} <br>
-           hán việt: ${currentCharacter.sinoVietnamese}
+            hán việt: ${currentCharacter.sinoVietnamese}
         `;
     }
 
     // Change the button text to "Tiếp"
-    document.getElementById('checkNextButton').innerHTML = 'Tiếp';
+    document.getElementById('checkNextButton').innerHTML = 'tiếp';
     isChecking = false; // Set state to "next"
 }
 
 function showCharacter() {
     if (!isChecking) { // Only show a new character when not in checking state
-        currentCharacter = getRandomCharacter();
+        currentCharacter = getRandomCharacter(); // Get a new random character
         document.getElementById('character-display').innerHTML = currentCharacter.character;
 
         // Reset the input box and make it visible again
@@ -123,7 +123,7 @@ function showCharacter() {
         document.getElementById('feedback').innerHTML = '';
 
         // Change the button back to "Kiểm tra"
-        document.getElementById('checkNextButton').innerHTML = 'Kiểm tra';
+        document.getElementById('checkNextButton').innerHTML = 'kiểm tra';
         isChecking = true; // Set state back to "checking"
     } else {
         checkPinyin(); // Check the answer if the button is in the "checking" state
@@ -142,6 +142,7 @@ document.addEventListener('keydown', function(event) {
 
 // Initial character display
 document.getElementById('character-display').innerHTML = currentCharacter.character;
+
 
 
    // if (userInput === currentCharacter.plainPinyin) {
