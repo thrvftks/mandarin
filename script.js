@@ -140,6 +140,9 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
+function highlightTones(pinyin) {
+    return pinyin.replace(/([āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ])/g, '<span class="tone">$1</span>');
+}
 // Initial character display
 document.getElementById('character-display').innerHTML = currentCharacter.character;
 
