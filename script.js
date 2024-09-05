@@ -73,7 +73,6 @@ const characters = [
 ];
 
 let currentCharacter = null;
-let isChecking = true;
 
 function getRandomCharacter() {
     const randomIndex = Math.floor(Math.random() * characters.length);
@@ -98,6 +97,7 @@ function showCharacter() {
         isChecking = true; // Set the state back to "checking"
     }
 }
+let isChecking = true; // Variable to track the button state (checking or next)
 
 function checkPinyin() {
     const userInput = document.getElementById('pinyin-input').value.trim().toLowerCase();
@@ -107,8 +107,8 @@ function checkPinyin() {
 
     if (userInput === currentCharacter.plainPinyin) {
         document.getElementById('feedback').innerHTML = `
-            <span class="pinyin">${highlightTones(currentCharacter.pinyin)}</span> 
-            <br>
+             <span class="pinyin">${highlightTones(currentCharacter.pinyin)}</span> 
+             <br>
             <br>
             ${currentCharacter.meaning} <br> 
             hán việt: ${currentCharacter.sinoVietnamese}
@@ -124,30 +124,53 @@ function checkPinyin() {
         `;
     }
 
-    // Change the button text and state to "Next"
-    document.getElementById('checkNextButton').innerHTML = 'tiếp';
+    // Change the button text to "Tiếp" (Next)
+    document.getElementById('checkNextButton').innerHTML = 'Tiếp';
     isChecking = false; // Set the state to "Next"
 }
 
+function showCharacter() {
+    if (!isChecking) { // Only show a new character when not checking (i.e., after the result is shown)
+        currentCharacter = getRandomCharacter();
+        document.getElementById('character-display').innerHTML = currentCharacter.character;
 
-function highlightTones(pinyin) {
-    return pinyin.replace(/([āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ])/g, '<span class="tone">$1</span>');
-}
+        // Reset the input box and make it visible again
+        document.getElementById('pinyin-input').value = '';
+        document.getElementById('pinyin-input').classList.remove('hidden');
+        document.getElementById('feedback').innerHTML = '';
 
-function handleButtonClick() {
-    if (isChecking) {
-        checkPinyin();
+        // Change the button back to "Kiểm tra"
+        document.getElementById('checkNextButton').innerHTML = 'Kiểm tra';
+        isChecking = true; // Set the state back to "checking"
     } else {
-        showCharacter();
+        checkPinyin(); // If in checking state, check the answer
     }
 }
 
-document.addEventListener("DOMContentLoaded", showCharacter);
-// Attach event listener for button click and enter key
+// Attach event listener for the button click
 document.getElementById('checkNextButton').addEventListener('click', showCharacter);
+
+// Also attach event listener for pressing the Enter key
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
         showCharacter();
     }
 });
 
+   // if (userInput === currentCharacter.plainPinyin) {
+     //   document.getElementById('feedback').innerHTML = `
+     //       <span class="pinyin">${highlightTones(currentCharacter.pinyin)}</span> 
+     //       <br>
+      //      <br>
+     //       ${currentCharacter.meaning} <br> 
+     //       hán việt: ${currentCharacter.sinoVietnamese}
+    //    `;
+//} else {
+  //      document.getElementById('feedback').innerHTML = `
+  //          sai !!!
+  //          <br>
+  //  
+  //          <span class="pinyin">${highlightTones(currentCharacter.pinyin)}</span> <br> <br>
+   //         ${currentCharacter.meaning} <br>
+  //          hán việt: ${currentCharacter.sinoVietnamese}
+ 
