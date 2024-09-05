@@ -135,14 +135,28 @@ function showCharacter() {
 }
 
 // Attach event listener for button click
-document.getElementById('checkNextButton').addEventListener('click', showCharacter);
-
-// Attach event listener for Enter key press
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        showCharacter();
+document.getElementById('checkNextButton').addEventListener('click', function() {
+    if (isChecking) {
+        checkPinyin(); // Check the answer
+    } else {
+        showCharacter(); // Show the next character
     }
 });
+
+// Attach event listener for Enter key press
+document.getElementById('pinyin-input').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        if (isChecking) {
+            // If still checking, run the checkPinyin function
+            checkPinyin();
+        } else {
+            // If already checked, move to the next character
+            showCharacter();
+        }
+    }
+});
+
+
 
 
 // Initial character display
