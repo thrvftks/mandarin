@@ -11,9 +11,9 @@
     font-weight: 100 900;
     font-style: italic;
 }
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&family=Noto+Serif+TC:wght@200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&family=Noto+Serif+TC:wght@200..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap');
 
 body {
     display: flex;
@@ -33,13 +33,13 @@ body {
 /* Traditional characters: Noto Serif TC (Weight 800) */
 #character-display .traditional {
     font-family: 'Noto Serif TC', serif;
-    font-weight: 800 !important;
+    font-weight: 800;
 }
 
 /* Simplified characters: Noto Serif SC (Weight 800) */
 #character-display .simplified {
     font-family: 'Noto Serif SC', serif;
-    font-weight: 800 !important;
+    font-weight: 800;
 }
 
 #feedback {
