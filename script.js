@@ -43,7 +43,7 @@ const characters = [
     { character: '喜歡', pinyin: 'xǐhuān', plainPinyin: 'xihuan', meaning: 'thích', sinoVietnamese: 'hỷ hoan', isTraditional: true },
     { character: '喜欢', pinyin: 'xǐhuān', plainPinyin: 'xihuan', meaning: 'thích', sinoVietnamese: 'hỷ hoan', isTraditional: false },
     { character: '茶', pinyin: 'chá', plainPinyin: 'cha', meaning: 'trà', sinoVietnamese: 'trà', isTraditional: true },
-    { character: '咖啡', pinyin: 'kāfēi', plainPinyin: 'kafei', meaning: 'cà phê', sinoVietnamese: 'già phê (phiên âm)', isTraditional: true },
+    { character: '咖啡', pinyin: 'kāfēi', plainPinyin: 'kafei', meaning: 'cà phê', sinoVietnamese: 'già phê', isTraditional: true },
     { character: '水', pinyin: 'shuǐ', plainPinyin: 'shui', meaning: 'nước', sinoVietnamese: 'thuỷ', isTraditional: true },
     { character: '姓', pinyin: 'xìng', plainPinyin: 'xing', meaning: 'họ', sinoVietnamese: 'tính', isTraditional: true },
     { character: '叫', pinyin: 'jiào', plainPinyin: 'jiao', meaning: 'gọi, tên là, kêu', sinoVietnamese: 'khiếu', isTraditional: true },
