@@ -33,13 +33,13 @@ body {
 /* Traditional characters: Noto Serif TC (Weight 800) */
 #character-display .traditional {
     font-family: 'Noto Serif TC', serif;
-    font-weight: 800;
+    font-weight: 800 !important;
 }
 
 /* Simplified characters: Noto Serif SC (Weight 800) */
 #character-display .simplified {
     font-family: 'Noto Serif SC', serif;
-    font-weight: 800;
+    font-weight: 800 !important;
 }
 
 #feedback {
