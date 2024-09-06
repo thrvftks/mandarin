@@ -88,16 +88,12 @@ document.getElementById('pinyin-input').addEventListener('keydown', function(eve
 
 // Button click handler
 document.getElementById('checkNextButton').addEventListener('click', function() {
-    handleButtonClick();
-});
-
-function handleButtonClick() {
     if (isChecking) {
         checkPinyin(); // Check the answer
     } else {
-        showCharacter(); // Show the next character
+        showCharacter(); // Move to the next character
     }
-}
+});
 
 function highlightTones(pinyin) {
     return pinyin.replace(/([āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ])/g, '<span class="tone">$1</span>');
