@@ -1,3 +1,6 @@
+/* Import Noto Serif SC/TC from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&family=Noto+Serif+TC:wght@200..900&display=swap');
+
 @font-face {
     font-family: 'Syne';
     src: url('SVN-SyneTactile.woff') format('woff2'),
@@ -12,8 +15,6 @@
     font-style: italic;
 }
 
-/* Import Noto Serif SC/TC from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&family=Noto+Serif+TC:wght@200..900&display=swap');
 
 body {
     display: flex;
