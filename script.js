@@ -81,23 +81,23 @@ function getRandomCharacter() {
 // Event listener for "Enter" key
 document.getElementById('pinyin-input').addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
-        event.preventDefault(); // Prevent default behavior (form submission, etc.)
-        if (isChecking) {
-            checkPinyin(); // Check the answer if still in checking mode
-        } else {
-            showCharacter(); // Move to the next character if already checked
-        }
+        event.preventDefault(); 
+        document.getElementById('checkNextButton').click(); // Trigger button click
     }
 });
 
 // Button click handler
 document.getElementById('checkNextButton').addEventListener('click', function() {
+    handleButtonClick();
+});
+
+function handleButtonClick() {
     if (isChecking) {
         checkPinyin(); // Check the answer
     } else {
         showCharacter(); // Show the next character
     }
-});
+}
 
 function highlightTones(pinyin) {
     return pinyin.replace(/([āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ])/g, '<span class="tone">$1</span>');
@@ -108,9 +108,12 @@ let currentCharacter = getRandomCharacter(); // Get a random character at the st
 
 function checkPinyin() {
     const userInput = document.getElementById('pinyin-input').value.trim().toLowerCase();
+    const feedback = document.getElementById('feedback');
+    const inputBox = document.getElementById('pinyin-input');
+    inputBox.classList.add('hidden'); // Hide input box after checking
 
     // Hide the input box when the answer is checked
-    document.getElementById('pinyin-input').classList.add('hidden');
+    //document.getElementById('pinyin-input').classList.add('hidden');
 
     if (userInput === currentCharacter.plainPinyin) {
         document.getElementById('feedback').innerHTML = `
