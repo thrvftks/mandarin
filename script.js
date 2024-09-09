@@ -70,6 +70,18 @@ const characters = [
     { character: '漢語', pinyin: 'hànyǔ', plainPinyin: 'hanyu', meaning: 'tiếng trung, tiếng hán', sinoVietnamese: 'hán ngữ', isTraditional: true },
     { character: '汉语', pinyin: 'hànyǔ', plainPinyin: 'hanyu', meaning: 'tiếng trung, tiếng hán', sinoVietnamese: 'hán ngữ', isTraditional: false },
     { character: '名字', pinyin: 'míngzì', plainPinyin: 'mingzi', meaning: 'tên', sinoVietnamese: 'danh tự', isTraditional: true },
+    { character: '一', pinyin: 'yī', plainPinyin: 'yi', meaning: 'một', sinoVietnamese: 'nhất', isTraditional: true },
+    { character: '二', pinyin: 'èr', plainPinyin: 'er', meaning: 'hai', sinoVietnamese: 'nhị', isTraditional: true },
+    { character: '三', pinyin: 'sān', plainPinyin: 'san', meaning: 'ba', sinoVietnamese: 'tam', isTraditional: true },
+    { character: '四', pinyin: 'sì', plainPinyin: 'si', meaning: 'bốn', sinoVietnamese: 'tứ', isTraditional: true },
+    { character: '五', pinyin: 'wǔ', plainPinyin: 'wu', meaning: 'năm', sinoVietnamese: 'ngũ', isTraditional: true },
+    { character: '六', pinyin: 'liù', plainPinyin: 'liu', meaning: 'sáu', sinoVietnamese: 'lục', isTraditional: true },
+    { character: '七', pinyin: 'qī', plainPinyin: 'qi', meaning: 'bảy', sinoVietnamese: 'thất', isTraditional: true },
+    { character: '八', pinyin: 'bā', plainPinyin: 'ba', meaning: 'tám', sinoVietnamese: 'bát', isTraditional: true },
+    { character: '九', pinyin: 'jiǔ', plainPinyin: 'jiu', meaning: 'chín', sinoVietnamese: 'cửu', isTraditional: true },
+    { character: '十', pinyin: 'shí', plainPinyin: 'shi', meaning: 'mười', sinoVietnamese: 'thập', isTraditional: true },
+    { character: '客氣', pinyin: 'kèqì / kèqi', plainPinyin: 'keqi', meaning: 'khách sáo, khiêm nhường', sinoVietnamese: 'khách khí', isTraditional: true },
+    { character: '客气', pinyin: 'kèqì / kèqi', plainPinyin: 'keqi', meaning: 'khách sáo, khiêm nhường', sinoVietnamese: 'khách khí', isTraditional: false },
 ];
 
 
